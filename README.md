@@ -18,12 +18,15 @@ Python, FastAPI, SQLAlchemy e PostgreSQL
 1. Crie um banco vazio no PostgreSQL
 2. Rode o arquivo `banco/criar_tabelas.sql` nesse banco (pelo pgAdmin ou psql) pra criar as tabelas
 3. Crie o ambiente virtual e instale as dependências:
-   ```
+```
    python -m venv .venv
    .venv\Scripts\Activate.ps1
    pip install -r requirements.txt
-   ```
-4. Copie o `.env.example` para `.env` e coloque a url do seu banco
+```
+4. Copie o `.env.example` para `.env` e troque pelos dados do seu banco:
+```
+   DATABASE_URL=postgresql+psycopg2://postgres:SUA_SENHA@localhost:5432/NOME_DO_BANCO
+```
 5. Rode com `uvicorn main:app --reload`
 
 As rotas ficam em http://127.0.0.1:8000/docs
